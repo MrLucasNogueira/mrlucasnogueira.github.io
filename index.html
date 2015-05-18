@@ -22,11 +22,13 @@
 				<label></label><br>
 				<div class="input-group">
 					<span class="input-group-addon" id="basic-addon1">#</span>
-					<input id="hashtag" class="form-control" type="text" placeholder="insira uma hashtag">
+					<input id="hashtag" class="form-control" type="text" placeholder="put a hashtag">
 					<span class="input-group-btn">
 						<button class="btn btn-primary" onclick="search()">Buscar</button>
 					</span>
+
 				</div>			
+				<p class="help-block">example: nofilter, vemprarua, ficaadica...</p>
 			</div>			
 		</div>
 	</div>
@@ -47,29 +49,36 @@
 		$("#instagram").empty();
 		data = [];
 
-		$.ajax({
-			type: "GET",
-			dataType: "jsonp",
-			cache: false,
-			url: "https://api.instagram.com/v1/tags/" + hashtag + "/media/recent?client_id=6733d5f2ae4345c9a3e73be491f4293c",
-			success: function(data)  {
-				for (var i = 0; i < 20; i++) {
-					console.log(data.data[i]);
+		if(hashtag == ""){
+			$("#instagram").append("<span class='bg-warning col-md-offset-5'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> Invalid tag</span>");
+		}else{
 
-					var date = new Date(data.data[i].created_time * 1000);
-					var months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Aug','Set','Out','Nov','Dec'];
-					var year = date.getFullYear();
-					var month = months[date.getMonth()];
-					var date = date.getDate();
-					var time = date+' de '+ month+' de '+year ;
+			$.ajax({
+				type: "GET",
+				dataType: "jsonp",
+				cache: false,
+				url: "https://api.instagram.com/v1/tags/" + hashtag + "/media/recent?client_id=6733d5f2ae4345c9a3e73be491f4293c",
+				success: function(data)  {
+					if(data.meta.code === 400){
+						$("#instagram").append("<span class='bg-warning col-md-offset-5'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> "+ data.meta.error_message+"</span>");
+					}else{
+						for (var i = 0; i < 20; i++) {
+							console.log(data.data[i]);
 
-					$("#instagram").append("<div class='card'><a href='" + data.data[i].link +"' target='_blank'><img class='md-col-6' alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.standard_resolution.url +"' ></a><br><p>@"+data.data[i].user.username+"<small><br> "+ time +" - via instagram</small></p></div>");
-                	//$("#instagram").append("<figure class='thumb_instagram img-rounded'><a href='" + data.data[i].link +"' target='_blank'><img alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.thumbnail.url +"' ></a><figcaption class='cor'><a>@"+ data.data[i].user.full_name +"</a></figcaption></figure>");
-                }
-            }
-        });
-}
+							var date = new Date(data.data[i].created_time * 1000);
+							var months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Aug','Set','Out','Nov','Dec'];
+							var year = date.getFullYear();
+							var month = months[date.getMonth()];
+							var date = date.getDate();
+							var time = date+' de '+ month+' de '+year ;
 
+							$("#instagram").append("<div class='card'><a href='" + data.data[i].link +"' target='_blank'><img class='md-col-6' alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.thumbnail.url +"' ></a><br><p>@"+data.data[i].user.username+"<small><br> "+ time +" - via instagram</small></p></div>");
+						}
+					}
+				}
+			});
+		}
+	}
 </script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
