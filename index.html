@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>Find Hastag</title>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid col-md-offset-1 col-md-10">
+			
+		</div>
+	</nav>
+
+
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 container">
+
+			<div class="busca col-md-offset-3 col-md-6">
+				<label></label><br>
+				<div class="input-group">
+					<input id="hashtag" class="form-control" type="text" placeholder="insira uma hashtag">
+					<span class="input-group-btn">
+						<button class="btn btn-primary" onclick="search()">Buscar</button>
+					</span>
+				</div>			
+			</div>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 container">
+			<div id="instagram"></div>
+		</div>
+	</div>
+	
+
+	<script type="text/javascript">
+	function search(){
+		console.log();
+		var hashtag = $("#hashtag").val();
+		$("#instagram").empty();
+		data = [];
+
+		$.ajax({
+			type: "GET",
+			dataType: "jsonp",
+			cache: false,
+			url: "https://api.instagram.com/v1/tags/" + hashtag + "/media/recent?client_id=6733d5f2ae4345c9a3e73be491f4293c",
+			success: function(data)  {
+				for (var i = 0; i < 20; i++) {
+					//console.log(data.data[i]);
+					$("#instagram").append("<div class='card'><a href='" + data.data[i].link +"' target='_blank'><img class='md-col-6' alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.standard_resolution.url +"' ></a><br><p>@"+data.data[i].user.username+"<br><small> via instagram</small></p></div>");
+                	//$("#instagram").append("<figure class='thumb_instagram img-rounded'><a href='" + data.data[i].link +"' target='_blank'><img alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.thumbnail.url +"' ></a><figcaption class='cor'><a>@"+ data.data[i].user.full_name +"</a></figcaption></figure>");
+                }
+            }
+        });
+	}
+	
+	</script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

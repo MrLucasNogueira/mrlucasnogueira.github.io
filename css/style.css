@@ -1,0 +1,25 @@
+body{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #D2D3D5;
+}
+.busca{
+    margin-bottom: 60px;
+}
+img{
+    width: 180px;
+}
+.row{
+    margin: 0;
+}
+.card{
+    width: 196px;
+    padding: 8px;
+    margin: 10px;
+    background-color: white;
+    float: left;
+}
+p{
+    margin-top: 10px;
+    font-size: 12px;
+}
