@@ -82,7 +82,7 @@
 							var date = date.getDate();
 							var time = date+' de '+ month+' de '+year ;
 
-							$("#instagram").append("<div class='card'><a href='" + data.data[i].link +"' target='_blank'><img class='md-col-6' alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.thumbnail.url +"' ></a><br><p>@"+data.data[i].user.username+"<small><br> "+ time +" - via instagram</small></p></div>");
+							$("#instagram").append("<div class='card'><a href='" + data.data[i].link +"' target='_blank'><img class='md-col-6' alt='"+ data.data[i].user.username +"' src='" + data.data[i].images.standard_resolution.url +"' ></a><br><p>@"+data.data[i].user.username+"<small><br> "+ time +" - via instagram</small></p></div>");
 						}
 						data = [];
 					}
