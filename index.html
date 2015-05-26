@@ -23,7 +23,7 @@
 					<span class="input-group-addon" id="basic-addon1">#</span>
 					<input id="hashtag" class="form-control" type="text" placeholder="put a hashtag">
 					<span id="search" class="input-group-btn">
-						<input type="submit" class="btn btn-primary" onclick="search()">Buscar</input>
+						<input type="submit" class="btn btn-primary" onclick="search()">Search</input>
 					</span>
 
 				</div>			
@@ -52,10 +52,10 @@
 
 		var hashtag = $("#hashtag").val();
 		$("#instagram").empty();
-		$("#instagram").append("<span class='bg-warning col-md-offset-5'> <span class='glyphicon glyphicon-refresh' aria-hidden='true'></span> Loading</span>");
+		$("#instagram").append("<span class='bg-warning col-md-offset-4'> <span class='glyphicon glyphicon-refresh' aria-hidden='true'></span> Loading</span>");
 
 		if(hashtag == ""){
-			$("#instagram").append("<span class='bg-warning col-md-offset-5'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> Invalid tag</span>");
+			$("#instagram").append("<span class='bg-warning col-md-offset-4'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> Invalid tag</span>");
 		}else{
 
 			$.ajax({
@@ -64,15 +64,14 @@
 				cache: false,
 				url: "https://api.instagram.com/v1/tags/" + hashtag + "/media/recent?client_id=6733d5f2ae4345c9a3e73be491f4293c",
 				success: function(data)  {
-					//console.log(data);
+					console.log(data);
 					//trocar ordem dos if
 					if(data.meta.code === 400){
 						$("#instagram").empty();
-						$("#instagram").append("<span class='bg-warning col-md-offset-5'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> "+ data.meta.error_message+"</span>");
+						$("#instagram").append("<span class='bg-warning col-md-offset-4'> <span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> "+ data.meta.error_message+"</span>");
 					}else if(data.data.length == '0'){
-						console.log("nada encontrado");
 						$("#instagram").empty();
-						$("#instagram").append("<span class='bg-warning col-md-offset-5'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> Nothing found</span>");
+						$("#instagram").append("<span class='bg-warning col-md-offset-4'><span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span> Nothing found</span>");
 					}else{
 						$("#instagram").empty();
 						for (var i = 0; i < 20; i++) {
