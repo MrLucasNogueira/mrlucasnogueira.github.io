@@ -97,7 +97,7 @@ ul{
 
 .video{
   width: 100%;
-  min-height: 300px;
+  min-height: 100px;
   background-color: #242424;
   text-align: center;
 }
