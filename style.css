@@ -1,0 +1,97 @@
+body{
+  background-color: aliceblue;
+}
+
+.header{
+  min-height: 400px;
+  width: 100%;
+  background-image: url(source/bg.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+h2{
+  position: absolute;
+  top: 120px;
+  left: 10%;
+  font-size: 21px;
+  color: black !important;
+}
+
+.content{
+  min-height: 400px;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+p{
+  text-indent: 1.5em;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.city{
+  margin: 20px 0px 20px 120px;
+  font-size: 14px;
+  font-style:italic;
+}
+
+.menssage{
+  text-indent: 0em !important;
+  font-style:italic;
+}
+
+.ref{
+  text-indent: 0em !important;
+  margin-top: 20px;
+}
+
+ul{
+  font-size: 16px;
+}
+
+.title{
+  padding: 20px;
+  padding-left: 0px;
+  padding-top: 45px;
+  margin: 0;
+  color: #52658C;
+  font-weight: bold;
+}
+
+.subtitle{
+  font-weight: bold;
+  margin-top: 5px;
+  width: 60%;
+  font-size: 17px;
+}
+
+.center{
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 20px;
+}
+
+.line1{
+ background-color: #C9EAF7; 
+}
+
+.line2{
+ background-color: #E9F6FD; 
+}
+
+.video{
+  width: 100%;
+  min-height: 300px;
+  background-color: #242424;
+  text-align: center;
+}
+
+iframe{
+  width:640px; 
+  height:360px; 
+}
+
+.mt40{
+  margin-top: 40px;
+}
