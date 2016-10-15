@@ -103,8 +103,8 @@ ul{
 }
 
 iframe{
-  width:560px; 
-  height:310px; 
+  max-width:560px; 
+  max-height:310px; 
 }
 
 .mt40{
