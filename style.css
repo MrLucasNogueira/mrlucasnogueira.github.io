@@ -85,6 +85,30 @@ ul{
     font-style:italic;
   }
   
+  .video{
+    width: 100%;
+    min-height: 100px;
+    background-color: #242424;
+    text-align: center;
+  }
+
+  iframe{
+    max-width:560px; 
+    max-height:310px; 
+  }
+  
+}
+
+.video{
+  width: 100%;
+  min-height: 300px;
+  background-color: #242424;
+  text-align: center;
+}
+
+iframe{
+  width:640px; 
+  height:360px; 
 }
 
 .line1{
@@ -93,18 +117,6 @@ ul{
 
 .line2{
  background-color: #E9F6FD; 
-}
-
-.video{
-  width: 100%;
-  min-height: 100px;
-  background-color: #242424;
-  text-align: center;
-}
-
-iframe{
-  max-width:560px; 
-  max-height:310px; 
 }
 
 .mt40{
