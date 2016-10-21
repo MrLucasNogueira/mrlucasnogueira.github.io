@@ -6,3 +6,7 @@ var swiper = new Swiper('.swiper-container', {
   nextButton: '.swiper-button-next',
   prevButton: '.swiper-button-prev'
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

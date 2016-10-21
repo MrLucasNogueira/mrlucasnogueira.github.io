@@ -9,10 +9,23 @@
   
   <link rel="stylesheet" href="vendor/swiper/swiper.min.css">
   <script src="vendor/swiper/swiper.min.js"></script>
+  <script src="vendor/jquery/jquery-3.1.1.min.js"></script>
   
   
 </head>
-<body>
+<body data-spy="scroll" data-target=".nav">
+  <div id="menu" class="nav navbar-nav navbar-fixed-top">
+    <ul class="nav navbar-nav">
+      <li data-toggle="tooltip" data-placement="left" title="Apresentação"><a href="#section1">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Ferramenta Interativa Fórum"><a href="#section2">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Linguagem do Fórum"><a href="#section3">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Avaliação de Aprendizagem"><a href="#section4">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Softwares"><a href="#section5">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Feedback aos Alunos"><a href="#section6">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Referências"><a href="#section7">a</a></li>
+      <li data-toggle="tooltip" data-placement="left" title="Mensagem Final"><a href="#section8">a</a></li>
+    </ul>
+ </div>
  
  <div class="header">
  </div>
@@ -22,7 +35,7 @@
 
   
   <section>
-   <div class="center">
+   <div id="section1" class="center">
     <h3 class="title">APRESENTAÇÃO</h3>
     <p>Este Guia Pedagógico foi elaborado a partir dos resultados obtidos pela pesquisa de mestrado do Programa de Pós-graduação em Tecnologia e Gestão em EAD, da Universidade Federal Rural de Pernambuco – UFRPE, intitulada: Avaliação de Aprendizagem no Fórum do AVA: construindo sensibilidades educativas. </p>
     
@@ -37,7 +50,8 @@
     
   </section>
   
-  <section class="content line1">
+  <section id="section2" class="content line1">
+   
     <div class="center">
       <h3 class="title">FERRAMENTA INTERATIVA FÓRUM</h3>
       
@@ -109,7 +123,7 @@
     </div>
   </section> 
    
-  <section class="content line2">
+  <section id="section3" class="content line2">
     <div class="center">
       
       <h3 class="title">LINGUAGEM DO FÓRUM </h3>
@@ -173,7 +187,7 @@
     </div>
   </section>  
   
-  <section class="content line2">
+  <section id="section4" class="content line2">
     <div class="center">
       
       <h3 class="title">AVALIAÇÃO DE APRENDIZAGEM NO FÓRUM  </h3>
@@ -221,7 +235,7 @@
   </section>
   
   
-  <section class="content line1">
+  <section id="section5" class="content line1">
     <div class="center">
       
       <h3 class="title">SOFTWARE – ACOMPANHAMENTO E CORREÇÃO DOS FÓRUNS</h3>
@@ -350,7 +364,7 @@
     
   </section>
   
-  <section class="content line2">
+  <section id="section6" class="content line2">
     <div class="center">
       
       <h3 class="title">FEEDBACK AOS ALUNOS</h3>
@@ -432,7 +446,7 @@
   </section>
    
   
-  <section class="content line1">
+  <section id="section7" class="content line1">
     <div class="center">
       
       <h3 class="title">REFERÊNCIAS </h3>
@@ -461,7 +475,7 @@
     </div>
   </section>
   
-  <section class="line2">
+  <section id="section8" class="line2">
     <div class="center">
 
       <h3 class="title">MENSAGEM FINAL</h3>
@@ -472,6 +486,7 @@
   </section>
   
   <script src="script.js"></script>
+  <script src="vendor/bootstrap/bootstrap.min.js"></script>
   
 </body>
 </html>
